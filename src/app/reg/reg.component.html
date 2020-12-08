@@ -1,0 +1,64 @@
+<form class="card auth-card">
+  <div class="card-content">
+    <span class="card-title">Регистрация</span>
+    <div class="formGroup">
+      <input
+        id="email"
+        type="text"
+        class="formControl"
+        #userName required
+      >
+      <label for="email">Email</label>
+      <small
+        class="helper-text invalid"
+      ></small>
+      <small
+        class="helper-text invalid"
+      ></small>
+    </div>
+
+<!--    <form class="formGroup" [formGroup]="form">-->
+<!--      <input-->
+<!--        id="name"-->
+<!--        type="text"-->
+<!--        class="formControl"-->
+<!--        formControlName="loginForm"-->
+<!--        #userName required-->
+<!--      >-->
+<!--      <label for="email">Login</label>-->
+<!--      <small-->
+<!--        class="helper-text invalid"-->
+<!--      ></small>-->
+<!--      <small-->
+<!--        class="helper-text invalid"-->
+<!--      ></small>-->
+<!--    </form>-->
+
+    <div class="formGroup">
+      <input
+        id="password"
+        type="password"
+        class="formControl"
+        #userPassword required
+      >
+      <label for="password">Password</label>
+      <small
+        class="helper-text invalid"
+      ></small>
+      <small
+        class="helper-text invalid"
+      ></small>
+    </div>
+  </div>
+  <div class="card-action">
+    <div>
+      <button class="btn waves-effect waves-light" type="submit" (click)="authService.SignUp(userName.value, userPassword.value)">Регистрация
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+
+    <p class="center">
+      <span>Уже есть аккаунт?<span class="redirect" routerLink="/login"> <a href="login"> Войти</a></span></span>
+    </p>
+  </div>
+</form>

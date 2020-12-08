@@ -1,0 +1,47 @@
+.chatbox {
+  margin: 5px auto 5px auto;
+  height: 55vh;
+  width: auto;
+  overflow-y: auto;
+  border-bottom: 1px solid grey;
+}
+
+.box {
+  position: relative;
+  background: #fff;
+  top: 25px;
+  padding: 1em 1em;
+  height: 80vh;
+}
+
+#scroller {
+  opacity: 0.5;
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  z-index: 9999;
+}
+
+#scroller:hover {
+  opacity: 1;
+}
+
+.input-form {
+  width: 60vw;
+}
+
+.text-form {
+  margin-top: 1em;
+  margin-left: 10px;
+  width: 70vw;
+}
+
+.bottom-box {
+  position: fixed;
+  background: #fff;
+  bottom: 10vh;
+  width: 70vw;
+  padding: 1em 1em;
+  height: auto;
+}
+

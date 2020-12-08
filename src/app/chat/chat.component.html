@@ -1,0 +1,63 @@
+<div class="box">
+<div id="chat" #scrollMe class="chatbox" (scroll)="onScroll($event)">
+  <div #messages *ngFor="let m of msgs | async">
+    <button style="margin: 10px 10px" id="scroller" class="circular ui icon button" (click)="scroll()"> <i class="large chevron down icon"></i></button>
+    <div *ngIf="this.authService.userData.uid === m['user'] else inmes">
+      <div style="margin-right: 10px" class="ui comments" >
+        <div class="comment">
+                <span class="avatar" >
+                    <img src="https://firebasestorage.googleapis.com/v0/b/angularchat-e4167.appspot.com/o/avatars%2F{{m['user']}}?alt=media&token=cd99439b-26d9-4a4a-938e-692889c6a217" alt="">
+                </span>
+          <div class="content">
+            <span class="author">{{ m.email }}</span>
+            <div class="text">
+              {{ m.text }}
+            </div>
+            <div class="metadata">
+              <span class="date">{{ m.date | date: 'dd.MM.YYYY'}}</span>
+            </div>
+            <br>
+            <div class="metadata">
+              <span class="date">{{ m.date | date: 'HH:mm'}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #inmes>
+      <div style="margin-left: 10px" class="ui comments1">
+        <div class="comment">
+                  <span class="avatar">
+                      <img src="https://firebasestorage.googleapis.com/v0/b/angularchat-e4167.appspot.com/o/avatars%2F{{m['user']}}?alt=media&token=cd99439b-26d9-4a4a-938e-692889c6a217" alt="">
+                  </span>
+          <div class="content1">
+            <span class="author">{{ m.email }}</span>
+            <div class="text">
+              {{ m.text }}
+            </div>
+            <div class="metadata">
+              <span class="date">{{ m.date | date: 'dd.MM.YYYY'}}</span>
+            </div>
+            <br>
+            <div class="metadata">
+              <span class="date">{{ m.date | date: 'HH:mm'}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <br>
+    <br>
+  </div>
+</div>
+    <div class="bottom-box">
+      <div class="ui form text-form">
+        <form class="ui grid" (ngSubmit)="create()" [formGroup]="form" (keyup.enter)="create()">
+          <div class="input-form fifteen wide grid">
+            <textarea rows="1" formControlName="textForm"  placeholder="Введите ваше сообщение"></textarea>
+          </div>
+          <button id="btn" type="submit" class="ui button" [disabled]="form.invalid"><i class="paper plane outline icon"></i>Отправить</button>
+        </form>
+      </div>
+    </div>
+</div>

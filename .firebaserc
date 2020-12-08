@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angularchat-e4167": {
+      "hosting": {
+        "layouts": [
+          "angularchat-e4167"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angularchat-e4167"
+  }
+}

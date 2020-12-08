@@ -1,0 +1,46 @@
+<form class="card auth-card">
+  <div class="card-content">
+    <span class="card-title">Вход в личный кабинет</span>
+    <div class="formGroup">
+      <input
+        id="email"
+        type="text"
+        class="formControl"
+        #userName required
+      >
+      <label for="email">Email</label>
+      <small
+        class="helper-text invalid"
+      ></small>
+      <small
+        class="helper-text invalid"
+      ></small>
+    </div>
+    <div class="formGroup">
+      <input
+        id="password"
+        type="password"
+        class="formControl"
+        #userPassword required
+      >
+      <label for="password">Password</label>
+      <small
+        class="helper-text invalid"
+      ></small>
+      <small
+        class="helper-text invalid"
+      ></small>
+    </div>
+  </div>
+  <div class="card-action">
+    <div>
+      <button class="btn waves-effect waves-light" type="submit" (click)="authService.SignIn(userName.value, userPassword.value)">Войти
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+
+    <p class="center">
+      <span>Нет аккаунта?<span class="redirect" routerLink="/register-user"> <a href="reg"> Зарегистрируйтесь</a> </span></span>
+    </p>
+  </div>
+</form>

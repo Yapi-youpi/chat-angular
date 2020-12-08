@@ -1,0 +1,24 @@
+<div *ngFor="let w of users |async">
+  <div style="margin: 10px 10px 10px 10px">
+    <div class="ui card">
+      <div class="image">
+        <img src="https://firebasestorage.googleapis.com/v0/b/angularchat-e4167.appspot.com/o/avatars%2F{{w.uid}}?alt=media&token=cd99439b-26d9-4a4a-938e-692889c6a217">
+      </div>
+      <form>
+        <input type="file" (change)="upload($event)" accept=".png,.jpg">
+      </form>
+      <div class="content">
+        <a class="header">{{w.displayName}}</a>
+        <form (ngSubmit)="update()" [formGroup]="form">
+          <input type="text" formControlName="editForm">
+        </form>
+        <div class="meta">
+          <span class="date">{{w.email}}</span>
+        </div>
+        <div class="description">{{w.uid}}</div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+

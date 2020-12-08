@@ -1,0 +1,14 @@
+<div>
+<nav class="navbar black lighten-1">
+  <div class="nav-wrapper">
+    <ul >
+      <li><a (click)="this.router.navigateByUrl('home')">Главная</a></li>
+    </ul>
+    <ul class="right">
+      <li><a (click)="this.router.navigateByUrl('chat')">Чат</a></li>
+      <li><a (click)="authService.SignOut()">Выйти</a></li>
+      </ul>
+  </div>
+</nav>
+  <router-outlet></router-outlet>
+</div>
